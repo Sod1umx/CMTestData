@@ -6,6 +6,15 @@ using namespace std;
 
 typedef unsigned int uint8;
 
+struct octNode
+{
+	long long cnt = 1;//本结点以下的像素总数
+	long long rSum = 0, gSum = 0, bSum = 0;//下面所有结点值的和
+	bool isLeaf = 0;//是否是叶子结点
+	int depth = 0;//本节点的深度
+	octNode* child[8] = { NULL };//8个子结点的指针数组
+};
+
 class octTree
 {
 public:
